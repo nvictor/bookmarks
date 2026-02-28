@@ -1,0 +1,18 @@
+{
+  "name": "bookmarks",
+  "version": "1.0.0",
+  "description": "Interactive explainer for Victor's two-tier personal/work bookmark system.",
+  "scripts": {
+    "dev": "python3 -m http.server 4175",
+    "build": "node scripts/build.mjs",
+    "preview": "python3 -m http.server --directory dist 4176"
+  },
+  "keywords": [
+    "bookmarks",
+    "productivity",
+    "organization"
+  ],
+  "author": "Victor Noagbodji",
+  "license": "MIT",
+  "type": "module"
+}
