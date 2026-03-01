@@ -136,7 +136,7 @@ const contexts = {
               "Framework docs, internal wikis, or API specs that you reference weekly.",
           },
           {
-            title: "📊 Active Dashboards",
+            title: "📊 Dashboards",
             detail:
               "Grafana, Looker, or BI boards that give an instant health check.",
           },
