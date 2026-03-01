@@ -28,11 +28,6 @@ const contexts = {
             detail:
               "A rotating folder for whatever deserves a sprint right now—trip planning, a big purchase, or a personal code project.",
           },
-          {
-            title: "🛠 Daily Tools",
-            detail:
-              "Regex testers, converters, router admin, and speed tests stay handy even though they also live in the archive.",
-          },
         ],
       },
       raindrop: {
@@ -93,7 +88,7 @@ const contexts = {
       label: "Folder label on the bar",
       placeholder: "Trip planning sprint",
       preview:
-        "Lives between Routine and Daily Tools. When finished, drag the folder into Projects Archive (tagged context:personal).",
+        "Lives right after Routine. When finished, drag the folder into Projects Archive (tagged context:personal).",
     },
   },
   work: {
@@ -114,6 +109,11 @@ const contexts = {
             title: "🌅 Startup",
             detail:
               "Middle-click one folder each morning to open Jira, inbox, calendar, and monitoring tabs in sequence.",
+          },
+          {
+            title: "🛠 Tools",
+            detail:
+              "CI/CD consoles, cloud dashboards, log viewers, and Linear/Jira search views you hop into constantly.",
           },
           {
             title: "📥 Inbox",
@@ -139,11 +139,6 @@ const contexts = {
             title: "📊 Active Dashboards",
             detail:
               "Grafana, Looker, or BI boards that give an instant health check.",
-          },
-          {
-            title: "🛠 Daily Tools",
-            detail:
-              "CI/CD consoles, cloud dashboards, log viewers, and Linear/Jira search views you hop into constantly.",
           },
         ],
       },
@@ -230,7 +225,7 @@ const app = document.querySelector("#app");
 app.innerHTML = `
   <section class="hero">
     <div class="tag">Two-tier bookmarks</div>
-    <h1>Bookmark Bar + Raindrop OS</h1>
+    <h1>Bookmark Bar + Raindrop IO</h1>
     <p>One click launches the workbench, Raindrop.io keeps the library searchable. Toggle contexts to see how Victor runs personal versus work stacks.</p>
     <p class="context-hint" id="hero-context"></p>
   </section>

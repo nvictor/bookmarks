@@ -111,7 +111,7 @@ const contexts = {
               "Middle-click one folder each morning to open Jira, inbox, calendar, and monitoring tabs in sequence.",
           },
           {
-            title: "🛠 Daily Tools",
+            title: "🛠 Tools",
             detail:
               "CI/CD consoles, cloud dashboards, log viewers, and Linear/Jira search views you hop into constantly.",
           },
