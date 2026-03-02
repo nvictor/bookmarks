@@ -24,7 +24,7 @@ const contexts = {
               "One click opens weather, news, finance, or journaling tabs so mornings start in the same groove.",
           },
           {
-            title: "🚧 WIP",
+            title: "✈️ InFlight",
             detail:
               "A rotating folder for whatever deserves a sprint right now—trip planning, a big purchase, or a personal code project.",
           },
@@ -126,7 +126,7 @@ const contexts = {
               "Links to plans, spreadsheets, decks, or Miro boards that actively steer the work.",
           },
           {
-            title: "🎯 Current Focus",
+            title: "✈️ InFlight",
             detail:
               "One folder per engagement (repo, staging link, design doc, monitoring). Archive it to Raindrop as soon as the work is signed off.",
           },
