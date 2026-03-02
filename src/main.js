@@ -24,7 +24,7 @@ const contexts = {
               "One click opens weather, news, finance, or journaling tabs so mornings start in the same groove.",
           },
           {
-            title: "🎯 Current Focus",
+            title: "🚧 WIP",
             detail:
               "A rotating folder for whatever deserves a sprint right now—trip planning, a big purchase, or a personal code project.",
           },
