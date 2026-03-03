@@ -6,12 +6,17 @@ const contexts = {
     tiers: {
       bar: {
         title: "Bookmark bar · Weekly cockpit",
-        copy: "This is your clickable workspace: icons for joy, an inbox that behaves like RAM, and folders that match the cadence of your week.",
+        copy: "This is your clickable workspace: icons for joy, an inbox that behaves like RAM, folders that match the cadence of your week, and a self-organizing order based on what you use most.",
         items: [
           {
             title: "🧭 Icon Row",
             detail:
               "Personal email, Hacker News, YouTube, Pandora, Raindrop, and communities stay as icon-only pins so the bar stays wide open.",
+          },
+          {
+            title: "↕️ Self-organizing flow",
+            detail:
+              "Whenever you use a bookmark, move it toward the front: icons shift left and links inside folders move to the top.",
           },
           {
             title: "📥 Inbox",
@@ -98,12 +103,17 @@ const contexts = {
     tiers: {
       bar: {
         title: "Bookmark bar · Operating console",
-        copy: "Muscle-memory links stay up top so you can reset your workspace in seconds and see only the sprint in front of you.",
+        copy: "Muscle-memory links stay up top so you can reset your workspace in seconds, with a self-organizing order that keeps high-use links closest.",
         items: [
           {
             title: "🧭 Icon Row",
             detail:
               "Email, Calendar, Slack, Jira, GitHub, and similar systems are pinned as icons for fast muscle-memory clicks.",
+          },
+          {
+            title: "↕️ Self-organizing flow",
+            detail:
+              "After using any bookmark, promote it: icon pins move left and links within a folder move to the top.",
           },
           {
             title: "🌅 Startup",
