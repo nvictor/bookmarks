@@ -6,17 +6,12 @@ const contexts = {
     tiers: {
       bar: {
         title: "Bookmark bar · Weekly cockpit",
-        copy: "This is your clickable workspace: icons for joy, an inbox that behaves like RAM, folders that match the cadence of your week, and a self-organizing order based on what you use most.",
+        copy: "This is your clickable workspace: icons for joy, an inbox that behaves like RAM, and folders that match the cadence of your week. Organize the icons row by muscle memory and the folders by workflow so you can launch into flow with one click and zero thought.",
         items: [
           {
             title: "🧭 Icon Row",
             detail:
               "Personal email, Hacker News, YouTube, Pandora, Raindrop, and communities stay as icon-only pins so the bar stays wide open.",
-          },
-          {
-            title: "↕️ Self-organizing flow",
-            detail:
-              "Whenever you use a bookmark, move it toward the front: icons shift left and links inside folders move to the top.",
           },
           {
             title: "📥 Inbox",
@@ -88,13 +83,6 @@ const contexts = {
         },
       ],
     },
-    focus: {
-      title: "Name this week's obsession",
-      label: "Folder label on the bar",
-      placeholder: "Trip planning sprint",
-      preview:
-        "Lives right after Routine. When finished, drag the folder into Projects Archive (tagged context:personal).",
-    },
   },
   work: {
     label: "Work stack",
@@ -103,17 +91,12 @@ const contexts = {
     tiers: {
       bar: {
         title: "Bookmark bar · Operating console",
-        copy: "Muscle-memory links stay up top so you can reset your workspace in seconds, with a self-organizing order that keeps high-use links closest.",
+        copy: "Muscle-memory links stay up top so you can reset your workspace in seconds and see only the sprint in front of you. Organize the icons row by frequency and the folders by workflow so you can launch into flow with one click and zero thought.",
         items: [
           {
             title: "🧭 Icon Row",
             detail:
               "Email, Calendar, Slack, Jira, GitHub, and similar systems are pinned as icons for fast muscle-memory clicks.",
-          },
-          {
-            title: "↕️ Self-organizing flow",
-            detail:
-              "After using any bookmark, promote it: icon pins move left and links within a folder move to the top.",
           },
           {
             title: "🌅 Startup",
@@ -205,13 +188,6 @@ const contexts = {
         },
       ],
     },
-    focus: {
-      title: "Define the active engagement",
-      label: "Folder label on the bar",
-      placeholder: "Launch QA blitz",
-      preview:
-        "Pin the staging build, issue list, and design doc together. When the push is done, archive the folder into Projects Archive with context:work.",
-    },
   },
 };
 
@@ -224,10 +200,6 @@ const state = {
   context: "personal",
   tier: "bar",
   backlog: 4,
-  focusText: {
-    personal: "Trip planning sprint",
-    work: "Launch QA blitz",
-  },
 };
 
 const app = document.querySelector("#app");
@@ -263,25 +235,16 @@ app.innerHTML = `
   </section>
 
   <section>
-    <div class="tools-grid">
-      <article class="cadence-slab">
-        <div class="tag cadence-day" id="cadence-day"></div>
-        <h3 id="cadence-title"></h3>
-        <p id="cadence-description"></p>
-        <div class="slider-group">
-          <label for="backlog-range" id="backlog-label"></label>
-          <input type="range" min="0" max="15" value="${state.backlog}" id="backlog-range" />
-        </div>
-        <p class="cadence-output" id="cadence-output"></p>
-      </article>
-      <article class="focus-panel">
-        <div class="tag">Current focus folder</div>
-        <h3 id="focus-title"></h3>
-        <label for="focus-input" id="focus-label"></label>
-        <input type="text" id="focus-input" maxlength="32" />
-        <div class="focus-preview" id="focus-preview"></div>
-      </article>
-    </div>
+    <article class="cadence-slab">
+      <div class="tag cadence-day" id="cadence-day"></div>
+      <h3 id="cadence-title"></h3>
+      <p id="cadence-description"></p>
+      <div class="slider-group">
+        <label for="backlog-range" id="backlog-label"></label>
+        <input type="range" min="0" max="15" value="${state.backlog}" id="backlog-range" />
+      </div>
+      <p class="cadence-output" id="cadence-output"></p>
+    </article>
   </section>
 `;
 
@@ -298,10 +261,6 @@ const cadenceDescriptionEl = document.getElementById("cadence-description");
 const backlogLabelEl = document.getElementById("backlog-label");
 const backlogRangeEl = document.getElementById("backlog-range");
 const cadenceOutputEl = document.getElementById("cadence-output");
-const focusTitleEl = document.getElementById("focus-title");
-const focusLabelEl = document.getElementById("focus-label");
-const focusInputEl = document.getElementById("focus-input");
-const focusPreviewEl = document.getElementById("focus-preview");
 
 const updateHero = () => {
   heroContextEl.textContent = contexts[state.context].heroHint;
@@ -354,31 +313,11 @@ const updateCadence = () => {
   );
 };
 
-const updateFocusPreview = () => {
-  const config = contexts[state.context].focus;
-  const currentValue = state.focusText[state.context] || "";
-  const displayValue = currentValue.trim() || config.placeholder;
-  focusPreviewEl.innerHTML = `
-    <strong>🎯 ${displayValue}</strong>
-    <p>${config.preview}</p>
-  `;
-};
-
-const refreshFocusShell = () => {
-  const config = contexts[state.context].focus;
-  focusTitleEl.textContent = config.title;
-  focusLabelEl.textContent = config.label;
-  focusInputEl.placeholder = config.placeholder;
-  focusInputEl.value = state.focusText[state.context] || "";
-  updateFocusPreview();
-};
-
 const applyState = () => {
   updateHero();
   updateButtons();
   updateCards();
   updateCadence();
-  refreshFocusShell();
 };
 
 contextButtons.forEach((button) => {
@@ -402,11 +341,6 @@ tierButtons.forEach((button) => {
 backlogRangeEl.addEventListener("input", (event) => {
   state.backlog = Number(event.target.value);
   updateCadence();
-});
-
-focusInputEl.addEventListener("input", (event) => {
-  state.focusText[state.context] = event.target.value;
-  updateFocusPreview();
 });
 
 applyState();

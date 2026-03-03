@@ -159,23 +159,16 @@ section {
   font-size: 0.95rem;
 }
 
-.tools-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.cadence-slab,
-.focus-panel {
+.cadence-slab {
   background: #0f172a;
   color: #f9fafb;
   border-radius: 26px;
   padding: 1.8rem;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 30px 70px rgba(15, 23, 42, 0.3);
+  width: 100%;
 }
 
-.cadence-slab h3,
-.focus-panel h3 {
+.cadence-slab h3 {
   margin-top: 0;
 }
 
@@ -190,18 +183,8 @@ input[type="range"] {
   accent-color: #a5b4fc;
 }
 
-input[type="range"],
-input[type="text"] {
+input[type="range"] {
   width: 100%;
-}
-
-input[type="text"] {
-  border-radius: 16px;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  font-family: inherit;
-  background: rgba(248, 250, 252, 0.9);
 }
 
 .cadence-output {
@@ -216,23 +199,6 @@ input[type="text"] {
   text-transform: uppercase;
   font-size: 0.8rem;
   color: #c7d2fe;
-}
-
-.focus-preview {
-  margin-top: 1rem;
-  border-radius: 18px;
-  padding: 1rem;
-  background: rgba(15, 23, 42, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.focus-preview strong {
-  font-size: 1.2rem;
-}
-
-.focus-preview p {
-  margin: 0.35rem 0 0;
-  color: rgba(255, 255, 255, 0.85);
 }
 
 @media (max-width: 700px) {
