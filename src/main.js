@@ -104,11 +104,6 @@ const contexts = {
               "Middle-click one folder each morning to open Jira, inbox, calendar, and monitoring tabs in sequence.",
           },
           {
-            title: "🛠 Tools",
-            detail:
-              "CI/CD consoles, cloud dashboards, log viewers, and Linear/Jira search views you hop into constantly.",
-          },
-          {
             title: "📥 Inbox",
             detail:
               "Temporary tickets, PRs, or research notes live here; clear it every Friday at 4:30 PM so the bar never becomes storage.",
@@ -117,6 +112,11 @@ const contexts = {
             title: "🗂 Planning",
             detail:
               "Links to plans, spreadsheets, decks, or Miro boards that actively steer the work.",
+          },
+          {
+            title: "🛠 Tools",
+            detail:
+              "CI/CD consoles, cloud dashboards, log viewers, and Linear/Jira search views you hop into constantly.",
           },
           {
             title: "✈️ InFlight",
