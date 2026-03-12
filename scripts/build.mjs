@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = join(__dirname, '..');
 const distDir = join(projectRoot, 'dist');
-const filesToCopy = ['index.html', 'styles.css'];
+const filesToCopy = ['index.html', 'styles.css', 'manifest.webmanifest', 'sw.js'];
 
 async function main() {
   await rm(distDir, { recursive: true, force: true });
@@ -16,8 +16,9 @@ async function main() {
   }
 
   await cp(join(projectRoot, 'src'), join(distDir, 'src'), { recursive: true });
+  await cp(join(projectRoot, 'icons'), join(distDir, 'icons'), { recursive: true });
 
-  console.log('Static site generated in', distDir);
+  console.log('PWA generated in', distDir);
 }
 
 main().catch((error) => {
