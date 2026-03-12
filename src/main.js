@@ -207,7 +207,7 @@ const app = document.querySelector("#app");
 app.innerHTML = `
   <section class="hero">
     <div class="tag">Two-tier bookmarks</div>
-    <h1>Bookmark Bar + Raindrop IO</h1>
+    <h1>Bookmark Bar + Raindrop.io</h1>
     <p>One click launches the workbench, Raindrop.io keeps the library searchable. Toggle contexts to see how Victor runs personal versus work stacks.</p>
     <p class="context-hint" id="hero-context"></p>
   </section>
